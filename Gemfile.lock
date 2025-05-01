@@ -136,11 +136,10 @@ GEM
     mongo (2.21.1)
       base64
       bson (>= 4.14.1, < 6.0.0)
-    mongoid (8.1.10)
+    mongoid (9.0.6)
       activemodel (>= 5.1, < 8.1, != 7.0.0)
       concurrent-ruby (>= 1.0.5, < 2.0)
       mongo (>= 2.18.0, < 3.0.0)
-      ruby2_keywords (~> 0.0.5)
     msgpack (1.8.0)
     net-imap (0.5.8)
       date
@@ -223,7 +222,6 @@ GEM
     ruby-vips (2.2.3)
       ffi (~> 1.12)
       logger
-    ruby2_keywords (0.0.5)
     securerandom (0.4.1)
     shrine (3.6.0)
       content_disposition (~> 1.0)
@@ -259,7 +257,7 @@ DEPENDENCIES
   fast_jsonapi
   image_processing
   jwt
-  mongoid (~> 8.0)
+  mongoid (~> 9.0)
   puma
   rack-cors
   rails (= 8.0.2)
