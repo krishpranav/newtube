@@ -1,10 +1,13 @@
-class RecommendationService
-  def self.similar_videos(base_video)
-    all_videos = Video.all.to_a
-    base_tags = base_video.tags
+require 'httparty'
 
-    all_videos.sort_by do |video|
-      -(video.tags & base_tags).size
-    end.take(10)
+class MlRecommendationService
+  include HTTParty
+  base_uri 'http://localhost:8001'
+
+  def self.get_recommendations(video_id, top_k = 5)
+    response = get("/recommend", query: { video_id: video_id, top_k: top_k })
+  rescue => e
+    Rails.logger.error("ML API Error: #{e}")
+    []
   end
 end
